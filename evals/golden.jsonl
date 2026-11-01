@@ -1,0 +1,18 @@
+{"id": "gs-01", "question": "How many days of annual leave do full-time employees get?", "expected_source": "leave_policy.md", "expected_keywords": ["24"]}
+{"id": "gs-02", "question": "How many unused leave days can I carry over?", "expected_source": "leave_policy.md", "expected_keywords": ["5"]}
+{"id": "gs-03", "question": "When do I need a medical certificate for sick leave?", "expected_source": "leave_policy.md", "expected_keywords": ["2"]}
+{"id": "gs-04", "question": "How long is parental leave for primary caregivers?", "expected_source": "leave_policy.md", "expected_keywords": ["26 weeks"]}
+{"id": "gs-05", "question": "What is the deadline to submit an expense claim?", "expected_source": "expense_policy.md", "expected_keywords": ["30 days"]}
+{"id": "gs-06", "question": "Can I fly business class?", "expected_source": "expense_policy.md", "expected_keywords": ["6 hours"]}
+{"id": "gs-07", "question": "What is the hotel limit in London?", "expected_source": "expense_policy.md", "expected_keywords": ["250"]}
+{"id": "gs-08", "question": "What is the daily meal allowance when travelling?", "expected_source": "expense_policy.md", "expected_keywords": ["60"]}
+{"id": "gs-09", "question": "How much is the home office stipend?", "expected_source": "expense_policy.md", "expected_keywords": ["500"]}
+{"id": "gs-10", "question": "What is the minimum password length?", "expected_source": "it_security.md", "expected_keywords": ["14"]}
+{"id": "gs-11", "question": "Which services require MFA?", "expected_source": "it_security.md", "expected_keywords": ["VPN"]}
+{"id": "gs-12", "question": "How quickly must I report a lost laptop?", "expected_source": "it_security.md", "expected_keywords": ["1 hour"]}
+{"id": "gs-13", "question": "After how long does a laptop lock automatically?", "expected_source": "it_security.md", "expected_keywords": ["5 minutes"]}
+{"id": "gs-14", "question": "What is the company's stock ticker symbol?", "expected_source": null, "expected_keywords": ["couldn't find"]}
+{"id": "gs-15", "question": "Who is the CEO?", "expected_source": null, "expected_keywords": ["couldn't find"]}
+{"id": "gs-16", "question": "What is the dress code?", "expected_source": null, "expected_keywords": ["couldn't find"]}
+{"id": "gs-17", "question": "How do I reset the office printer?", "expected_source": null, "expected_keywords": ["couldn't find"]}
+{"id": "gs-18", "question": "Can I expense alcohol?", "expected_source": "expense_policy.md", "expected_keywords": ["client dinner"]}
