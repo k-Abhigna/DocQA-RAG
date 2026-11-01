@@ -39,6 +39,9 @@ st.caption("Ask questions about your documents. Answers cite the passages they c
 
 if "history" not in st.session_state:
     st.session_state.history = []
+    # Shareable demo links: /?q=How+many+sick+days  (repeat q for several questions)
+    for q in st.query_params.get_all("q"):
+        st.session_state.history.append(pipeline.ask(q, k=4))
 
 for turn in st.session_state.history:
     st.chat_message("user").write(turn["question"])

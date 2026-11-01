@@ -1,9 +1,21 @@
 # DocQA-RAG — Ask Questions About Your Documents
 
+[![CI](https://github.com/k-Abhigna/DocQA-RAG/actions/workflows/ci.yml/badge.svg)](https://github.com/k-Abhigna/DocQA-RAG/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13-blue)
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
+
 A retrieval-augmented generation (RAG) app: upload PDFs, Markdown, or text files,
 ask questions in plain English, and get short answers that cite the passages they
 came from. It runs fully offline by default and uses Claude or a local Ollama model
 when one is available.
+
+![DocQA-RAG chat UI answering questions with citations](docs/screenshot.png)
+
+| Metric (18-question golden set, offline mode) | Score |
+|---|---|
+| Retrieval hit@4 | 100% |
+| Mean reciprocal rank | 1.000 |
+| Answer accuracy | 94% |
 
 ```
  documents ─► chunk (heading-aware, fence-safe) ─► TF-IDF index (word + char n-grams)
@@ -21,7 +33,7 @@ when one is available.
 - **Generation**: provider chosen automatically — Claude (`ANTHROPIC_API_KEY`), Ollama (local), or an extractive fallback that needs no model. If an LLM call fails, it falls back to the extractive answer.
 - **Interfaces**: REST API (FastAPI, auto docs at `/docs`) and a chat UI (Streamlit) with expandable sources
 - **Evaluation**: golden question set with hit@k, MRR, and answer accuracy, plus a pass/fail gate for CI
-- **Tests**: pytest suite covering chunking, retrieval, answers, and API validation
+- **Tests and CI**: pytest suite covering chunking, retrieval, answers, and API validation; GitHub Actions runs the tests and the evaluation gate on Python 3.11–3.13 for every push
 
 ## Quick start (Windows PowerShell)
 ```powershell
@@ -29,7 +41,7 @@ cd "C:\Job\Resume\My Projects\AI Project\DocQA-RAG"
 python -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
 
-# Chat UI
+# Chat UI  (demo link: http://localhost:8501/?q=How+many+sick+days+do+I+get%3F)
 .venv\Scripts\streamlit run app.py
 
 # REST API  ->  http://127.0.0.1:8000/docs
@@ -72,7 +84,7 @@ data/docs/        sample documents (fictional "Nimbus Labs" handbook)
 ## Possible next steps
 - Replace TF-IDF with dense embeddings (e.g. `fastembed` / sentence-transformers) plus a vector DB (FAISS / Chroma), using hybrid retrieval with reciprocal-rank fusion
 - Add a reranker, conversation memory, and streaming answers
-- Containerise with Docker and add a GitHub Actions workflow that runs `pytest` and `evals.run_eval`
+- Containerise with Docker
 
 Built with patterns from the `jeremylongshore/tons-of-skills-marketplace` skills:
 `langchain-embeddings-search` (score direction, fence-safe chunking), `langchain-eval-harness`
